@@ -1,3 +1,5 @@
+import { User } from './user'
+
 export interface Lawyer {
     id: string
     userId: string

@@ -166,8 +166,8 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {CONSULTATION_TYPES.map((type) => (
-                <Card key={type.id} className={`relative border-2 hover:shadow-xl transition-all ${type.popular ? 'border-primary-500 scale-105' : 'border-gray-200'}`}>
-                  {type.popular && (
+                <Card key={type.id} className={`relative border-2 hover:shadow-xl transition-all ${'popular' in type && type.popular ? 'border-primary-500 scale-105' : 'border-gray-200'}`}>
+                  {'popular' in type && type.popular && (
                     <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary-600">
                       Most Popular
                     </Badge>
@@ -182,7 +182,7 @@ export default function HomePage() {
                     <Link href={`/dashboard/consultations/book?type=${type.id}`}>
                       <Button 
                         className="w-full" 
-                        variant={type.popular ? 'default' : 'outline'}
+                        variant={'popular' in type && type.popular ? 'default' : 'outline'}
                       >
                         Select Plan
                       </Button>

@@ -9,16 +9,30 @@ module.exports = {
       extend: {
         colors: {
           primary: {
-            50: '#eff6ff',
-            100: '#dbeafe',
-            200: '#bfdbfe',
-            300: '#93c5fd',
-            400: '#60a5fa',
-            500: '#3b82f6',
-            600: '#2563eb',
-            700: '#1d4ed8',
-            800: '#1e40af',
-            900: '#1e3a8a',
+            50: '#f8f9fa',
+            100: '#f1f3f4',
+            200: '#e8eaed',
+            300: '#dadce0',
+            400: '#bdc1c6',
+            500: '#9aa0a6',
+            600: '#5f6368',
+            700: '#3c4043',
+            800: '#202124',
+            900: '#1a1a1a',
+            950: '#0d1117',
+          },
+          // Gold accent for legal theme
+          accent: {
+            50: '#fffef7',
+            100: '#fffbeb',
+            200: '#fef3c7',
+            300: '#fde68a',
+            400: '#fcd34d',
+            500: '#f59e0b',
+            600: '#d97706',
+            700: '#b45309',
+            800: '#92400e',
+            900: '#78350f',
           },
           secondary: {
             50: '#f8fafc',
@@ -68,14 +82,30 @@ module.exports = {
             800: '#991b1b',
             900: '#7f1d1d',
           },
+          // Professional grays for legal theme
+          neutral: {
+            50: '#fafafa',
+            100: '#f5f5f5',
+            200: '#e5e5e5',
+            300: '#d4d4d4',
+            400: '#a3a3a3',
+            500: '#737373',
+            600: '#525252',
+            700: '#404040',
+            800: '#262626',
+            900: '#171717',
+            950: '#0a0a0a',
+          },
         },
         fontFamily: {
           sans: ['Inter', 'system-ui', 'sans-serif'],
+          serif: ['Georgia', 'Times New Roman', 'serif'], // Adding serif for legal documents
         },
         animation: {
           'fade-in': 'fadeIn 0.5s ease-in-out',
           'slide-up': 'slideUp 0.3s ease-out',
           'slide-down': 'slideDown 0.3s ease-out',
+          'glow': 'glow 2s ease-in-out infinite alternate',
         },
         keyframes: {
           fadeIn: {
@@ -90,9 +120,16 @@ module.exports = {
             '0%': { transform: 'translateY(-10px)', opacity: '0' },
             '100%': { transform: 'translateY(0)', opacity: '1' },
           },
+          glow: {
+            '0%': { boxShadow: '0 0 5px rgba(245, 158, 11, 0.5)' },
+            '100%': { boxShadow: '0 0 20px rgba(245, 158, 11, 0.8)' },
+          },
+        },
+        backgroundImage: {
+          'gradient-legal': 'linear-gradient(135deg, #1a1a1a 0%, #202124 50%, #3c4043 100%)',
+          'gradient-accent': 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
         },
       },
     },
     plugins: [],
   }
-  

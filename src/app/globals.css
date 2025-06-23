@@ -5,33 +5,123 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 11% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 11% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+    --popover-foreground: 210 11% 15%;
+    --primary: 210 11% 15%;
+    --primary-foreground: 0 0% 98%;
     --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
+    --secondary-foreground: 210 11% 15%;
     --muted: 210 40% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --ring: 210 11% 15%;
     --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 210 11% 15%;
+    --foreground: 210 40% 98%;
+    --card: 210 11% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 210 11% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 210 11% 15%;
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 25% 27%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 25% 27%;
+    --input: 215 25% 27%;
+    --ring: 216 12.2% 83.9%;
   }
 }
 
 @layer base {
   * {
-    @apply border-gray-200;
+    @apply border-neutral-200;
   }
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-white text-neutral-900 font-sans;
+  }
+  
+  /* Professional legal styling */
+  .legal-gradient {
+    @apply bg-gradient-legal;
+  }
+  
+  .accent-gradient {
+    @apply bg-gradient-accent;
+  }
+  
+  /* Custom scrollbar for professional look */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-400 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-500;
+  }
+}
+
+@layer components {
+  /* Professional button styles */
+  .btn-primary {
+    @apply bg-primary-900 text-white hover:bg-primary-800 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .btn-accent {
+    @apply bg-accent-500 text-white hover:bg-accent-600 focus:ring-2 focus:ring-accent-400 focus:ring-offset-2;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-900 text-primary-900 hover:bg-primary-900 hover:text-white focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  /* Professional card styles */
+  .card-legal {
+    @apply bg-white border border-neutral-200 rounded-lg shadow-sm hover:shadow-md transition-shadow;
+  }
+  
+  .card-premium {
+    @apply bg-white border-2 border-accent-500 rounded-lg shadow-lg hover:shadow-xl transition-all;
+  }
+  
+  /* Legal hero section */
+  .hero-legal {
+    @apply bg-gradient-legal text-white;
+  }
+  
+  /* Professional text styles */
+  .text-legal-primary {
+    @apply text-primary-900;
+  }
+  
+  .text-legal-secondary {
+    @apply text-neutral-600;
+  }
+  
+  .text-accent {
+    @apply text-accent-600;
   }
 }

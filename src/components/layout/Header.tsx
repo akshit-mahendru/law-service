@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { Menu, X, Phone, Mail } from 'lucide-react'
 import { NAVIGATION_ITEMS, APP_CONFIG } from '@/lib/constants'
@@ -10,9 +11,9 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white shadow-sm border-b">
+    <header className="bg-white shadow-sm border-b border-neutral-200">
       {/* Top bar */}
-      <div className="bg-primary-600 text-white py-2">
+      <div className="bg-primary-900 text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex space-x-4">
@@ -26,7 +27,7 @@ export function Header() {
               </div>
             </div>
             <div className="hidden md:block">
-              <span>Affordable Legal Consultation for SMEs</span>
+              <span>Professional Legal Consultation for SMEs</span>
             </div>
           </div>
         </div>
@@ -35,15 +36,29 @@ export function Header() {
       {/* Main header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* Logo */}
+          {/* Custom Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">SL</span>
+            <Link href="/" className="flex items-center space-x-3">
+              {/* Replace this Image component with your logo */}
+              <div className="relative h-12 w-auto">
+                <Image
+                  src="/logo.png"
+                  alt="SME Legal - Professional Legal Consultation"
+                  width={180}
+                  height={48}
+                  className="h-12 w-auto object-contain"
+                  priority
+                />
               </div>
-              <span className="text-xl font-bold text-gray-900">
-                SME Legal
-              </span>
+              {/* Optional: Add text logo fallback if image fails to load */}
+              <div className="hidden sm:flex flex-col">
+                <span className="text-xl font-bold text-primary-900">
+                  SME Legal
+                </span>
+                <span className="text-xs text-neutral-600 -mt-1">
+                  Professional Consultation
+                </span>
+              </div>
             </Link>
           </div>
 
@@ -53,7 +68,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-neutral-700 hover:text-primary-900 px-3 py-2 text-sm font-medium transition-colors border-b-2 border-transparent hover:border-accent-500"
               >
                 {item.name}
               </Link>
@@ -63,10 +78,14 @@ export function Header() {
           {/* Desktop auth buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Link href="/auth/login">
-              <Button variant="ghost">Login</Button>
+              <Button variant="ghost" className="text-primary-900 hover:text-accent-600">
+                Login
+              </Button>
             </Link>
             <Link href="/auth/register">
-              <Button>Get Started</Button>
+              <Button className="bg-primary-900 hover:bg-primary-800 text-white border border-accent-500">
+                Get Started
+              </Button>
             </Link>
           </div>
 
@@ -74,7 +93,7 @@ export function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="text-primary-900 hover:text-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 p-2"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -87,24 +106,28 @@ export function Header() {
 
         {/* Mobile navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4">
+          <div className="md:hidden border-t border-neutral-200 py-4 bg-neutral-50">
             <nav className="flex flex-col space-y-4">
               {NAVIGATION_ITEMS.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-primary-600 px-3 py-2 text-base font-medium"
+                  className="text-neutral-700 hover:text-primary-900 px-3 py-2 text-base font-medium border-l-4 border-transparent hover:border-accent-500 hover:bg-white"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="border-t border-gray-200 pt-4 space-y-3">
+              <div className="border-t border-neutral-200 pt-4 space-y-3 px-3">
                 <Link href="/auth/login" className="block">
-                  <Button variant="ghost" className="w-full">Login</Button>
+                  <Button variant="ghost" className="w-full text-primary-900">
+                    Login
+                  </Button>
                 </Link>
                 <Link href="/auth/register" className="block">
-                  <Button className="w-full">Get Started</Button>
+                  <Button className="w-full bg-primary-900 hover:bg-primary-800">
+                    Get Started
+                  </Button>
                 </Link>
               </div>
             </nav>

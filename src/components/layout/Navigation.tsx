@@ -29,14 +29,24 @@ export function Navigation({ items, className }: NavigationProps) {
             key={item.name}
             href={item.href}
             className={cn(
-              'flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors',
+              'flex items-center space-x-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200',
               isActive
-                ? 'bg-primary-100 text-primary-700'
-                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                ? 'bg-primary-900 text-white shadow-lg border border-accent-500'
+                : 'text-neutral-700 hover:text-primary-900 hover:bg-neutral-100 border border-transparent hover:border-accent-300'
             )}
           >
-            {item.icon && <span className="flex-shrink-0">{item.icon}</span>}
+            {item.icon && (
+              <span className={cn(
+                "flex-shrink-0 transition-colors",
+                isActive ? "text-accent-400" : "text-neutral-500"
+              )}>
+                {item.icon}
+              </span>
+            )}
             <span>{item.name}</span>
+            {isActive && (
+              <span className="w-2 h-2 bg-accent-400 rounded-full animate-pulse"></span>
+            )}
           </Link>
         )
       })}

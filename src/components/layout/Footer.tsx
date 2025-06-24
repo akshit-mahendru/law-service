@@ -1,3 +1,4 @@
+// File: src/components/layout/Footer.tsx
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -16,7 +17,7 @@ export function Footer() {
               <div className="relative h-10 w-auto">
                 <Image
                   src="/logo-white.png" // Use white version for dark background
-                  alt="SME Legal - Professional Legal Consultation"
+                  alt="Neeti Marg - Professional Legal Consultation"
                   width={160}
                   height={40}
                   className="h-10 w-auto object-contain"
@@ -28,8 +29,11 @@ export function Footer() {
                 <span className="text-xs text-neutral-400 -mt-1">Professional Legal Services</span>
               </div>
             </div>
+            <div className="mb-4">
+              <p className="text-accent-400 font-medium text-sm mb-2">{APP_CONFIG.tagline}</p>
+            </div>
             <p className="text-neutral-300 mb-6 max-w-md leading-relaxed">
-              {APP_CONFIG.description}. Connect with verified lawyers specializing in SME legal matters. 
+              {APP_CONFIG.description}. Connect with verified lawyers specializing in business legal matters. 
               Professional, reliable, and affordable legal consultation for your business needs.
             </p>
             <div className="space-y-3">
@@ -64,6 +68,12 @@ export function Footer() {
                 <Link href="/lawyers" className="text-neutral-300 hover:text-white hover:translate-x-1 transition-all duration-200 flex items-center">
                   <span className="w-2 h-2 bg-accent-500 rounded-full mr-3"></span>
                   Find Lawyers
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/compliance" className="text-neutral-300 hover:text-white hover:translate-x-1 transition-all duration-200 flex items-center">
+                  <span className="w-2 h-2 bg-accent-500 rounded-full mr-3"></span>
+                  Compliance
                 </Link>
               </li>
               <li>
@@ -129,7 +139,7 @@ export function Footer() {
             </p>
             <div className="flex items-center space-x-4 mt-4 md:mt-0">
               <p className="text-neutral-400 text-sm">
-                Made with <span className="text-accent-400">⚖</span> for Indian SMEs
+                Made with <span className="text-accent-400">⚖</span> for Indian Businesses
               </p>
               <div className="flex space-x-2">
                 <div className="w-2 h-2 bg-accent-500 rounded-full"></div>

@@ -1,9 +1,12 @@
+// File: src/lib/constants.ts
+
 // App Configuration
 export const APP_CONFIG = {
-    name: 'SME Legal Consultation',
-    description: 'Affordable legal consultation for Small & Medium Enterprises in India',
+    name: 'Neeti Marg',
+    description: 'Professional legal consultation services - MARG: Mediation, Advice, Rights, Guidance',
+    tagline: 'MARG = Mediation, Advice, Rights, Guidance',
     version: '1.0.0',
-    supportEmail: 'support@smelegal.com',
+    supportEmail: 'support@theneetimarg.com',
     supportPhone: '+91-8800-123-456',
   } as const
   
@@ -201,6 +204,7 @@ export const APP_CONFIG = {
   export const NAVIGATION_ITEMS = [
     { name: 'Home', href: '/' },
     { name: 'Find Lawyers', href: '/lawyers' },
+    { name: 'Compliance', href: '/services/compliance' },
     { name: 'Services', href: '/services' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'About', href: '/about' },

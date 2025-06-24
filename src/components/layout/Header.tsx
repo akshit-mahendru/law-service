@@ -1,3 +1,4 @@
+// File: src/components/layout/Header.tsx
 'use client'
 
 import React, { useState } from 'react'
@@ -27,7 +28,7 @@ export function Header() {
               </div>
             </div>
             <div className="hidden md:block">
-              <span>Professional Legal Consultation for SMEs</span>
+              <span>{APP_CONFIG.tagline}</span>
             </div>
           </div>
         </div>
@@ -43,7 +44,7 @@ export function Header() {
               <div className="relative h-12 w-auto">
                 <Image
                   src="/logo.png"
-                  alt="SME Legal - Professional Legal Consultation"
+                  alt="Neeti Marg - Professional Legal Consultation"
                   width={180}
                   height={48}
                   className="h-12 w-auto object-contain"
@@ -53,7 +54,7 @@ export function Header() {
               {/* Optional: Add text logo fallback if image fails to load */}
               <div className="hidden sm:flex flex-col">
                 <span className="text-xl font-bold text-primary-900">
-                  SME Legal
+                  {APP_CONFIG.name}
                 </span>
                 <span className="text-xs text-neutral-600 -mt-1">
                   Professional Consultation

@@ -1,3 +1,4 @@
+// File: src/app/page.tsx
 import React from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -17,7 +18,7 @@ import {
   ArrowRight,
   Scale
 } from 'lucide-react'
-import { CONSULTATION_TYPES } from '@/lib/constants'
+import { CONSULTATION_TYPES, APP_CONFIG } from '@/lib/constants'
 import { formatCurrency } from '@/lib/utils'
 
 export default function HomePage() {
@@ -31,12 +32,17 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
+                <div className="mb-4">
+                  <Badge className="bg-yellow-500 text-gray-900 text-sm font-medium px-3 py-1">
+                    {APP_CONFIG.tagline}
+                  </Badge>
+                </div>
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                  Legal Consultation Made <span className="text-yellow-400">Simple</span> for SMEs
+                  Professional Legal Consultation Made <span className="text-yellow-400">Simple</span>
                 </h1>
                 <p className="text-xl text-blue-100 mb-8">
-                  Connect with verified lawyers specializing in SME legal matters. 
-                  Get expert advice through video consultations at affordable prices.
+                  Connect with verified lawyers specializing in business legal matters. 
+                  Get expert advice through video consultations at affordable prices with Neeti Marg.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/lawyers">
@@ -59,7 +65,7 @@ export default function HomePage() {
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold">10k+</div>
-                    <div className="text-blue-200 text-sm">SMEs Served</div>
+                    <div className="text-blue-200 text-sm">Businesses Served</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold">4.8/5</div>
@@ -101,10 +107,10 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose SME Legal?
+                Why Choose Neeti Marg?
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                We understand the unique legal challenges faced by small and medium enterprises in India
+                We understand the unique legal challenges faced by businesses in India through our comprehensive MARG approach
               </p>
             </div>
 
@@ -114,7 +120,7 @@ export default function HomePage() {
                   <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Video className="h-8 w-8 text-primary-600" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Video Consultations</h3>
+                  <h3 className="text-lg font-semibold mb-2">Mediation Services</h3>
                   <p className="text-gray-600">Secure video calls with verified lawyers from anywhere in India</p>
                 </CardContent>
               </Card>
@@ -124,28 +130,28 @@ export default function HomePage() {
                   <div className="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Users className="h-8 w-8 text-success-600" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">SME Specialists</h3>
-                  <p className="text-gray-600">Lawyers with deep expertise in small business legal matters</p>
+                  <h3 className="text-lg font-semibold mb-2">Expert Advice</h3>
+                  <p className="text-gray-600">Lawyers with deep expertise in business legal matters and compliance</p>
                 </CardContent>
               </Card>
 
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-warning-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Clock className="h-8 w-8 text-warning-600" />
+                    <Shield className="h-8 w-8 text-warning-600" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Quick Response</h3>
-                  <p className="text-gray-600">Get consultation within 2 hours of booking</p>
+                  <h3 className="text-lg font-semibold mb-2">Rights Protection</h3>
+                  <p className="text-gray-600">Comprehensive legal rights protection and dispute resolution services</p>
                 </CardContent>
               </Card>
 
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-error-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="h-8 w-8 text-error-600" />
+                    <Clock className="h-8 w-8 text-error-600" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Secure & Confidential</h3>
-                  <p className="text-gray-600">End-to-end encrypted consultations with strict confidentiality</p>
+                  <h3 className="text-lg font-semibold mb-2">Professional Guidance</h3>
+                  <p className="text-gray-600">Get consultation within 2 hours with end-to-end encrypted sessions</p>
                 </CardContent>
               </Card>
             </div>
@@ -202,7 +208,7 @@ export default function HomePage() {
                 Comprehensive Legal Services
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                From compliance to contracts, we cover all your SME legal needs
+                From compliance to contracts, we cover all your business legal needs
               </p>
             </div>
 
@@ -210,11 +216,11 @@ export default function HomePage() {
               <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-6">
                   <Scale className="h-12 w-12 text-primary-600 mb-4" />
-                  <h3 className="text-xl font-semibold mb-3">MSME Compliance</h3>
+                  <h3 className="text-xl font-semibold mb-3">Legal Compliance</h3>
                   <p className="text-gray-600 mb-4">
-                    MSME registration, GST compliance, labor law adherence, and regulatory filings
+                    Comprehensive compliance management, regulatory filings, and legal risk assessment
                   </p>
-                  <Link href="/services/sme-compliance" className="text-primary-600 hover:text-primary-700 font-medium">
+                  <Link href="/services/compliance" className="text-primary-600 hover:text-primary-700 font-medium">
                     Learn more →
                   </Link>
                 </CardContent>
@@ -296,7 +302,7 @@ export default function HomePage() {
                 What Our Clients Say
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Join thousands of satisfied SME owners who trust us with their legal needs
+                Join thousands of satisfied business owners who trust Neeti Marg with their legal needs
               </p>
             </div>
 
@@ -309,7 +315,7 @@ export default function HomePage() {
                     ))}
                   </div>
                   <p className="text-gray-600 mb-6">
-                    "SME Legal helped us navigate complex GST compliance issues. Their lawyers are knowledgeable and responsive. Highly recommended!"
+                    "Neeti Marg helped us navigate complex GST compliance issues. Their lawyers are knowledgeable and responsive. Highly recommended!"
                   </p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
@@ -377,7 +383,7 @@ export default function HomePage() {
               Ready to Get Expert Legal Advice?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Join thousands of SMEs who trust us with their legal needs. Book your consultation today.
+              Join thousands of businesses who trust Neeti Marg with their legal needs. Book your consultation today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/lawyers">

@@ -1,3 +1,4 @@
+// File: src/app/layout.tsx
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -8,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: APP_CONFIG.name,
   description: APP_CONFIG.description,
-  keywords: 'SME legal consultation, business lawyer India, MSME legal services, corporate law, contract drafting',
+  keywords: 'legal consultation, business lawyer India, MSME legal services, corporate law, contract drafting, compliance services, mediation, legal advice',
   authors: [{ name: APP_CONFIG.name }],
   openGraph: {
     title: APP_CONFIG.name,

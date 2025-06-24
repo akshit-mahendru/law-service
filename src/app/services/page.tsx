@@ -1,3 +1,4 @@
+// File: src/app/services/page.tsx
 import React from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -13,10 +14,27 @@ import {
   Phone, 
   Clock, 
   CheckCircle,
-  ArrowRight 
+  ArrowRight,
+  Clipboard
 } from 'lucide-react'
 
 const services = [
+  {
+    id: 'compliance',
+    title: 'Legal Compliance',
+    description: 'Comprehensive legal compliance management for businesses',
+    icon: Clipboard,
+    features: [
+      'Regulatory Compliance Audit',
+      'Compliance Documentation',
+      'Legal Risk Assessment',
+      'Regulatory Filing Support',
+      'Compliance Training',
+      'Ongoing Compliance Monitoring'
+    ],
+    pricing: 'Starting from ₹3,000',
+    popular: false,
+  },
   {
     id: 'sme-compliance',
     title: 'MSME Compliance',
@@ -125,11 +143,11 @@ export default function ServicesPage() {
         <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Comprehensive Legal Services for SMEs
+              Comprehensive Legal Services for Businesses
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              From compliance to contracts, we provide end-to-end legal solutions 
-              tailored for small and medium enterprises in India.
+              From compliance to contracts, Neeti Marg provides end-to-end legal solutions 
+              tailored for businesses in India through our MARG approach.
             </p>
             <Link href="/lawyers">
               <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100">
@@ -198,10 +216,10 @@ export default function ServicesPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                How It Works
+                How Neeti Marg Works
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Simple, transparent process to get the legal help you need
+                Simple, transparent process to get the legal help you need through our MARG methodology
               </p>
             </div>
 
@@ -210,22 +228,22 @@ export default function ServicesPage() {
                 {
                   step: '01',
                   title: 'Choose Service',
-                  description: 'Select the legal service that matches your business needs'
+                  description: 'Select the legal service that matches your business needs from our comprehensive offerings'
                 },
                 {
                   step: '02',
                   title: 'Book Consultation',
-                  description: 'Schedule a video consultation with a specialized lawyer'
+                  description: 'Schedule a video consultation with a specialized lawyer who understands your industry'
                 },
                 {
                   step: '03',
                   title: 'Get Expert Advice',
-                  description: 'Discuss your requirements and get professional legal guidance'
+                  description: 'Discuss your requirements and receive professional legal guidance tailored to your situation'
                 },
                 {
                   step: '04',
-                  title: 'Receive Documents',
-                  description: 'Get drafted documents and ongoing legal support as needed'
+                  title: 'Receive Support',
+                  description: 'Get drafted documents and ongoing legal support as needed for your business growth'
                 }
               ].map((step, index) => (
                 <div key={index} className="text-center">
@@ -247,7 +265,7 @@ export default function ServicesPage() {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Connect with our expert lawyers and get the legal support your business needs.
+              Connect with our expert lawyers at Neeti Marg and get the legal support your business needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/lawyers">
